@@ -8,14 +8,14 @@ client:
       peer:
         endorser: "300"
 organizations:
-  Org${ORG}:
+  MyContext:
     mspid: MyContextMSP
     peers:
       - peer0.mycontext.example.com
     certificateAuthorities:
       - ca.mycontext.example.com
 peers:
-  peer0.org${ORG}.example.com:
+  peer0.mycontext.example.com:
     url: grpcs://localhost:${P0PORT}
     tlsCACerts:
       pem: |
@@ -24,7 +24,7 @@ peers:
       ssl-target-name-override: peer0.mycontext.example.com
       hostnameOverride: peer0.mycontext.example.com
 certificateAuthorities:
-  ca.org${ORG}.example.com:
+  ca.mycontext.example.com:
     url: https://localhost:${CAPORT}
     caName: ca-mycontext
     tlsCACerts:
