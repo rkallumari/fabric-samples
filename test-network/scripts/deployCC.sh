@@ -208,14 +208,14 @@ checkCommitReadiness() {
 	ORG=$1
 	shift 1
 	setGlobals $ORG
-	echo "===================== Checking the commit readiness of the chaincode definition on peer0.org${ORG} on channel '$CHANNEL_NAME'... ===================== "
+	echo "===================== Checking the commit readiness of the chaincode definition on peer0.mycontext on channel '$CHANNEL_NAME'... ===================== "
 	local rc=1
 	local COUNTER=1
 	# continue to poll
 	# we either get a successful response, or reach MAX RETRY
 	while [ $rc -ne 0 -a $COUNTER -lt $MAX_RETRY ]; do
 		sleep $DELAY
-		echo "Attempting to check the commit readiness of the chaincode definition on peer0.org${ORG}, Retry after $DELAY seconds."
+		echo "Attempting to check the commit readiness of the chaincode definition on peer0.mycontext, Retry after $DELAY seconds."
 		set -x
 		peer lifecycle chaincode checkcommitreadiness --channelID $CHANNEL_NAME --name ${CC_NAME} --version ${CC_VERSION} --sequence ${CC_SEQUENCE} ${INIT_REQUIRED} ${CC_END_POLICY} ${CC_COLL_CONFIG} --output json >&log.txt
 		res=$?
@@ -345,7 +345,7 @@ chaincodeQuery() {
 packageChaincode 1
 
 ## Install chaincode on peer0.org1 and peer0.org2
-echo "Installing chaincode on peer0.org1..."
+echo "Installing chaincode on peer0.mycontext..."
 installChaincode 1
 # echo "Install chaincode on peer0.org2..."
 # installChaincode 2
@@ -358,7 +358,7 @@ approveForMyOrg 1
 
 ## check whether the chaincode definition is ready to be committed
 ## expect org1 to have approved and org2 not to
-checkCommitReadiness 1 "\"Org1MSP\": true" "\"Org2MSP\": false"
+checkCommitReadiness 1 "\"MyContextMSP\": true" 
 # checkCommitReadiness 2 "\"Org1MSP\": true" "\"Org2MSP\": false"
 
 ## now approve also for org2
