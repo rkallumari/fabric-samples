@@ -44,7 +44,7 @@ Organizations:
         OrdererEndpoints:
             - orderer.example.com:7050
 
-    - &Org1
+    - &MyContext
         # DefaultOrg defines the organization which is used in the sampleconfig
         # of the fabric.git development environment
         Name: MyContextMSP
