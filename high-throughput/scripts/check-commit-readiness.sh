@@ -5,20 +5,20 @@
 #
 
 setGlobals() {
-  ORG=$1
-  if [ $ORG -eq 1 ]; then
+  # ORG=$1
+  # if [ $ORG -eq 1 ]; then
     CORE_PEER_LOCALMSPID="Org1MSP"
     CORE_PEER_TLS_ROOTCERT_FILE=../test-network/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt
     CORE_PEER_MSPCONFIGPATH=../test-network/organizations/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp
     CORE_PEER_ADDRESS=localhost:7051
-  elif [ $ORG -eq 2 ]; then
-    CORE_PEER_LOCALMSPID="Org2MSP"
-    CORE_PEER_TLS_ROOTCERT_FILE=../test-network/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt
-    CORE_PEER_MSPCONFIGPATH=../test-network/organizations/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp
-    CORE_PEER_ADDRESS=localhost:9051
-  else
-    echo "================== ERROR !!! ORG Unknown =================="
-  fi
+  # elif [ $ORG -eq 2 ]; then
+  #   CORE_PEER_LOCALMSPID="Org2MSP"
+  #   CORE_PEER_TLS_ROOTCERT_FILE=../test-network/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt
+  #   CORE_PEER_MSPCONFIGPATH=../test-network/organizations/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp
+  #   CORE_PEER_ADDRESS=localhost:9051
+  # else
+  #   echo "================== ERROR !!! ORG Unknown =================="
+  # fi
 
   if [ "$VERBOSE" == "true" ]; then
     env | grep CORE
