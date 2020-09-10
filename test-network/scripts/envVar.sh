@@ -42,9 +42,9 @@ setGlobals() {
   #   export CORE_PEER_TLS_ROOTCERT_FILE=$PEER0_ORG3_CA
   #   export CORE_PEER_MSPCONFIGPATH=${PWD}/organizations/peerOrganizations/org3.example.com/users/Admin@org3.example.com/msp
   #   export CORE_PEER_ADDRESS=localhost:11051
-  else
-    echo "================== ERROR !!! ORG Unknown =================="
-  fi
+  # else
+  #   echo "================== ERROR !!! ORG Unknown =================="
+  # fi
 
   if [ "$VERBOSE" == "true" ]; then
     env | grep CORE
