@@ -175,7 +175,7 @@ if [ "$SAMPLES" == "true" ]; then
     echo
     echo "Clone hyperledger/fabric-samples repo"
     echo
-    #cloneSamplesRepo
+    cloneSamplesRepo
 fi
 if [ "$BINARIES" == "true" ]; then
     echo
