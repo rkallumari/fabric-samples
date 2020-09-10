@@ -5,7 +5,7 @@
 #
 
 setGlobals() {
-  # ORG=$1
+  ORG=$1
   # if [ $ORG -eq 1 ]; then
     CORE_PEER_LOCALMSPID="Org1MSP"
     CORE_PEER_TLS_ROOTCERT_FILE=../test-network/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt
